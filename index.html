@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivia Lee | Creative Portfolio</title>
+<style>
+:root {
+  --pink: #f6b9d0;
+  --light: #fff5f8;
+  --hot: #e85b91;
+  --red: #b83b51;
+  --cream: #fffaf0;
+  --ink: #49323b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background-color: var(--light);
+  background-image: radial-gradient(#e9a5bf 1px, transparent 1px);
+  background-size: 19px 19px;
+}
+a { color: inherit; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fff5f8ee;
+  border-bottom: 2px dashed var(--pink);
+  padding: 13px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--red);
+}
+nav { display: flex; gap: 15px; flex-wrap: wrap; }
+nav a {
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: bold;
+}
+nav a:hover { color: var(--hot); }
+main { max-width: 1050px; margin: auto; padding: 25px 18px; }
+section { padding: 55px 0; scroll-margin-top: 80px; }
+.hero {
+  min-height: 75vh;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 25px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .75rem;
+  font-weight: bold;
+  color: var(--hot);
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: .95; margin: 12px 0; }
+h1 span { color: var(--hot); font-style: italic; }
+h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 15px; }
+h3 { margin-top: 0; }
+p { line-height: 1.75; }
+.hero-art {
+  min-height: 330px;
+  border: 3px solid white;
+  outline: 2px dashed var(--hot);
+  outline-offset: 5px;
+  border-radius: 48% 48% 18px 18px;
+  background: linear-gradient(145deg, #ffd9e7, #f6a8c6, #ffe8b9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: rotate(2deg);
+}
+.tv {
+  width: 80%;
+  padding: 20px;
+  border: 7px solid #9e5368;
+  border-radius: 24px;
+  background: #f7d6df;
+  box-shadow: 7px 8px 0 #c66b8b;
+  text-align: center;
+}
+.tv-screen {
+  background: #fff4dc;
+  border: 5px solid #d99aaa;
+  border-radius: 12px;
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+}
+.sticker {
+  position: absolute;
+  font-size: 2rem;
+  filter: drop-shadow(1px 2px white);
+}
+.s1 { top: 12px; left: 18px; }
+.s2 { right: 15px; bottom: 20px; }
+.s3 { top: 35px; right: 22px; }
+.button {
+  display: inline-block;
+  background: var(--hot);
+  color: white;
+  text-decoration: none;
+  padding: 12px 19px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin: 7px 7px 0 0;
+  box-shadow: 3px 4px 0 #dca0b6;
+}
+.button:hover { transform: translateY(-2px); }
+.button.alt { background: var(--cream); color: var(--red); }
+.paper {
+  background: #fffdf7;
+  border: 2px solid white;
+  outline: 1px dashed #e8a2bc;
+  outline-offset: -9px;
+  padding: 28px;
+  box-shadow: 4px 6px 0 #edc2d1;
+  border-radius: 8px;
+}
+.about-grid, .cards, .skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card {
+  background: #fffdf8;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 24px;
+  box-shadow: 4px 5px 0 #efc1d1;
+}
+.card .emoji { font-size: 2.2rem; }
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #ffe0eb;
+  border-radius: 20px;
+  font-size: .78rem;
+  margin: 3px;
+}
+.skills { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.skill {
+  text-align: center;
+  background: #ffe2ec;
+  padding: 18px 10px;
+  border-radius: 14px;
+  border: 1px dashed var(--hot);
+}
+.note {
+  padding: 15px;
+  background: #fff0b9;
+  transform: rotate(-1deg);
+  box-shadow: 3px 4px 0 #e8c5a2;
+}
+.contact { text-align: center; }
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #f8d5e2;
+  border-top: 2px dashed var(--hot);
+}
+@media (max-width: 650px) {
+  header { justify-content: center; }
+  .hero { grid-template-columns: 1fr; padding-top: 20px; }
+  .hero-art { min-height: 280px; }
+  .about-grid, .cards, .skills { grid-template-columns: 1fr; }
+  section { padding: 38px 0; }
+  nav { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home" style="text-decoration:none">✿ Olivia Lee</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">What I Do</a>
+    <a href="#work">My Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">✧ A creative little corner of the internet ✧</div>
+    <h1>Olivia <span>Lee.</span></h1>
+    <h3>Creative Direction · Marketing · Storytelling</h3>
+    <p>A creative at heart, a storyteller by nature, and a firm believer that good design should make people feel something.</p>
+    <a class="button" href="#work">Explore my work ✿</a>
+    <a class="button alt" href="#contact">Let's connect</a>
+  </div>
+  <div class="hero-art">
+    <span class="sticker s1">✿</span>
+    <span class="sticker s2">💖</span>
+    <span class="sticker s3">✨</span>
+    <div class="tv">
+      <div class="tv-screen">
+        <div>OLIVIA LEE<br><span style="color:#d94f86">CREATIVE PORTFOLIO</span><br>♡ ✧ ♡</div>
+      </div>
+      <p style="margin:12px 0 0;font-size:.8rem">ON AIR: BIG IDEAS & LITTLE DETAILS</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="eyebrow">The girl behind the ideas</div>
+  <h2>A little about me ♡</h2>
+  <div class="about-grid">
+    <div class="paper">
+      <p>I'm Olivia — a creative, curious person who loves turning ideas into something people can see, feel, and connect with.</p>
+      <p>My interests live somewhere between psychology, visual storytelling, community, and the little details that make a brand feel human. I love exploring how creativity can bring people together and make important messages easier to connect with.</p>
+      <p>My style is a little nostalgic, a little whimsical, and always full of personality. I believe creativity doesn't have to be perfect to be meaningful.</p>
+    </div>
+    <div class="note">
+      <h3>Currently collecting…</h3>
+      <p>♡ ideas in my notes app<br>♡ colors, textures & inspiration<br>♡ ways to make community feel closer<br>♡ projects that mean something</p>
+      <p><strong>My creative philosophy:</strong> make it thoughtful, make it memorable, make it matter.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="eyebrow">A few of my favorite things</div>
+  <h2>What I do best ✨</h2>
+  <div class="skills">
+    <div class="skill"><div class="emoji">📱</div><strong>Social Media</strong><p>Content ideas, posts & digital storytelling.</p></div>
+    <div class="skill"><div class="emoji">🎨</div><strong>Creative Marketing</strong><p>Fresh concepts with a clear purpose.</p></div>
+    <div class="skill"><div class="emoji">🪄</div><strong>Branding</strong><p>Visual personality, tone & identity.</p></div>
+    <div class="skill"><div class="emoji">🌷</div><strong>Community</strong><p>Outreach and making people feel included.</p></div>
+    <div class="skill"><div class="emoji">📖</div><strong>Storytelling</strong><p>Words and visuals that connect.</p></div>
+    <div class="skill"><div class="emoji">🎀</div><strong>Creative Direction</strong><p>Bringing a big-picture idea to life.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="eyebrow">A scrapbook of projects & ideas</div>
+  <h2>My work ✂️</h2>
+  <p>Community projects, creative experiences, and concept campaigns. Some pieces are early-stage mockups created to explore ideas and demonstrate my approach.</p>
+  <div class="cards">
+    <article class="card">
+      <div class="emoji">🎨</div>
+      <h3>NAMI · Creative Marketing</h3>
+      <p>Volunteer creative marketing work supporting mental health awareness, community outreach, social media, and events with NAMI Lubbock.</p>
+      <span class="tag">Mental health awareness</span><span class="tag">Community</span>
+    </article>
+    <article class="card">
+      <div class="emoji">📸</div>
+      <h3>Inside Out Foundation</h3>
+      <p>Content creation and visual storytelling focused on sharing a mission and connecting people with community-centered work.</p>
+      <span class="tag">Content creation</span><span class="tag">Storytelling</span>
+    </article>
+    <article class="card">
+      <div class="emoji">🧵</div>
+      <h3>CASP · Art Fellowship</h3>
+      <p>A creative fellowship experience exploring art, ideas, and the role of creativity in community.</p>
+      <span class="tag">Creative exploration</span><span class="tag">Art</span>
+    </article>
+    <article class="card">
+      <div class="emoji">🎉</div>
+      <h3>Community Engagement</h3>
+      <p>Creative ways to invite participation, build connections, and make community experiences feel welcoming.</p>
+      <span class="tag">Outreach</span><span class="tag">Events</span>
+    </article>
+    <article class="card">
+      <div class="emoji">📺</div>
+      <h3>Portfolio Resident Services</h3>
+      <p><strong>Concept campaign / mockup:</strong> a warm, nostalgic creative direction concept exploring local awareness and connection with younger audiences for an affordable-housing nonprofit.</p>
+      <span class="tag">Concept only</span><span class="tag">Campaign design</span>
+    </article>
+    <article class="card">
+      <div class="emoji">🏆</div>
+      <h3>School & Art Achievements</h3>
+      <p>First place in a mental-illness art contest and third place at state in theatrical marketing — experiences that strengthened my love of creativity and communication.</p>
+      <span class="tag">Art</span><span class="tag">Marketing</span>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="paper contact">
+    <div class="eyebrow">Have a little idea?</div>
+    <h2>Let's make something meaningful. 💌</h2>
+    <p>Interested in creative marketing, community projects, content, or collaborating on an idea? I'd love to hear from you.</p>
+    <p><strong>Email:</strong><br><a href="mailto:olivia.lee1026@yahoo.com">olivia.lee1026@yahoo.com</a></p>
+    <p><strong>Phone:</strong><br><a href="tel:+18067837788">806-783-7788</a></p>
+    <a class="button" href="mailto:olivia.lee1026@yahoo.com?subject=Creative%20Collaboration">Email me ♡</a>
+    <a class="button alt" href="tel:+18067837788">Call me</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Made with love, glitter, and a suspicious number of ideas. ✧</p>
+  <p>© 2026 Olivia Lee · Creative Portfolio</p>
+  <a href="#home">Back to the top ↑</a>
+</footer>
+</body>
+</html>
